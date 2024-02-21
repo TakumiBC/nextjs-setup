@@ -28,4 +28,4 @@ pnpm add --save-dev husky lint-staged
 pnpm exec husky init
 node --eval "fs.writeFileSync('.husky/pre-commit','pnpm exec lint-staged\n')"
 jq '. += {"lint-staged": {"**/*": "prettier --write --ignore-unknown"}}' package.json > tmp.$$.json && mv tmp.$$.json package.json
-echo "setup finished. see https://prettier.io/docs/en/editors to setup prettier in your editor."
+echo "Setup finished. See https://prettier.io/docs/en/editors to setup prettier in your editor."
