@@ -1,16 +1,18 @@
 #!/bin/zsh
 echo "By: TakumiBC (Thomas Wu)"
 echo "Project Repo: https://github.com/TakumiBC/nextjs-setup"
-sleep 3
+echo ""
+
 if ! jq --version &> /dev/null; then
   echo "jq is not installed. Please install it using Homebrew."
   exit 1
 fi
-echo "jq is installed, continuing with the script..."
+
 sed -i '' '4,$d' app/globals.css
 echo "export default function Home() {
   return (
     <>
+      <h1>Hello World!</h1>
     </>
   );
 }" > app/page.tsx
@@ -28,4 +30,5 @@ pnpm add --save-dev husky lint-staged
 pnpm exec husky init
 node --eval "fs.writeFileSync('.husky/pre-commit','pnpm exec lint-staged\n')"
 jq '. += {"lint-staged": {"**/*": "prettier --write --ignore-unknown"}}' package.json > tmp.$$.json && mv tmp.$$.json package.json
+pnpm dlx shadcn-ui@latest init
 echo "Setup finished. See https://prettier.io/docs/en/editors to setup prettier in your editor."
