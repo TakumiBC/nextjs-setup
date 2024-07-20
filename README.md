@@ -1,6 +1,6 @@
 # nextjs-setup
 
-This script will setup a Next.js project with Prettier, and integrates Prettier with ESLint, TailwindCSS and Husky, for a better experience. It streamlines the process of configuring a new Next.js application with Prettier to save more time on starting new projects .
+This script will setup a Next.js project with Prettier and shadcn/ui, and integrates Prettier with ESLint, TailwindCSS and Husky, for a better experience. It streamlines the process of configuring a new Next.js application with Prettier to save more time on starting new projects.
 
 ## Dependencies
 
