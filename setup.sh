@@ -16,6 +16,8 @@ echo "export default function Home() {
     </>
   );
 }" > app/page.tsx
+rm -rf package-lock.json
+pnpm i
 rm -rf app/favicon.ico
 pnpm add --save-dev --save-exact prettier
 node --eval "fs.writeFileSync('.prettierrc','{}\n')"
